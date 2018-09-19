@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("button").mouseenter(function () {
+                    var total;
+                    if (document.getElementById("Massa").checked) {
+                        total = 15;
+                    }
+                    if (document.getElementById("Carne").checked) {
+                        total = 10;
+                    }
+                    if (document.getElementById("Peixe").checked) {
+                        total = 8;
+                    }
+                    if (document.getElementById("Salada").checked) {
+                        total = total + 4;
+                    }
+                    if (document.getElementById("Legumes").checked) {
+                        total = total + 3;
+                    }
+                    if (document.getElementById("Farofa").checked) {
+                        total = total + 4;
+                    }
+                    if (document.getElementById("Fritas").checked) {
+                        total = total + 5;
+                    }
+                    if (document.getElementById("Placomp").selected) {
+                        total = total - 3.5;
+                    }
+                    if (document.getElementById("Abutua").selected) {
+                        total = total - 4;
+                    }
+                    if (document.getElementById("Google").selected) {
+                        total = total - 6;
+                    }
+                    if (document.getElementById("Prefeitura").selected) {
+                        total = total - 3;
+                    }
+                    alert("Valor Total: " + total);
+                });
+            });
+            $(document).ready(function () {
+                $("textarea").focus(function () {
+                    $(this).css("background-color", "#cccccc");
+                });
+                $("textarea").blur(function () {
+                    $(this).css("background-color", "#ffffff");
+                });
+            });
+
+        </script>
+    </head>
+    <body>
+        Escolha o seu prato<br><br>
+        <p><b>Prato Principal:<input checked ="checked" type="radio" name="pratop" value="Massa" id="Massa">Massa<input type="radio" name="pratop" value="Carne" id="Carne">Carne <input type="radio" name="pratop" value="Peixe" id="Peixe">Peixe </b></p>
+        <b>Acompanhamentos:</b><br>
+        <input type="checkbox" name="acomp" value="Salada" id="Salada"><b>Salada</b><br>
+        <input type="checkbox" name="acomp" value="Legumes" id="Legumes"><b>Legumes</b><br>
+        <input type="checkbox" name="acomp" value="Farofa" id="Farofa"><b>Farofa</b><br>
+        <input type="checkbox" name="acomp" value="Fritas" id="Fritas"><b>Fritas</b><br><br>
+        <b>Convenio:</b> <select name="convenio">
+            <option id="Placomp">Placomp</option>
+            <option id="Abutua">Abutua</option>
+            <option id="Google">Google</option>
+            <option id="Prefeitura">Prefeitura</option>
+        </select><br><br>
+        <b>Observacoes</b><br>
+        <textarea rows="4" cols="40" name="observ"></textarea>
+        <br><br>
+
+        <button>Enviar</button>
+
+    </body>
+</html>
+
